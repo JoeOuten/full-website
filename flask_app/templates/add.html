@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="flask_app\static\style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <div class='row'>
+        <div class='left col'>
+            <div class="d-flex justify-content-end">
+                <div class="col-4 text-end">
+                <a href="/shows">
+                    TV Shows
+                </a>
+                </div>
+                <div class="col-4 text-end">
+                    <a href="/logout">
+                        logout
+                    </a>
+                </div>
+                </div> 
+                    <h3>Add a New Show!</h3>
+                    <p class="text-danger">Description must not be blank</p>
+                    <div class="d-flex justify-content-end">
+                    </div> 
+                        <form action="/shows/cre" method="POST">
+                            
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" class="form-control" placeholder="{{session[title]}}">
+                </div>               
+                <div class="form-group">
+                    <label for="network">Network:</label>
+                    <input type="text"  name="network" class="form-control" placeholder="{{session[network]}}">
+                </div>
+                <div class="form-group">
+                        <label for="release_date">Release Date:</label>
+                        <input class="form-control" name="release_date" type="datetime-local">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <input type="Description" name="description" class="form-control" placeholder="enter description:">
+                </div>
+                <div class="d-flex justify-content-end">
+                <input type="submit" class="btn btn-success" value="Add">
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    </body>
+</html>

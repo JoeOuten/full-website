@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='flask_app\static\style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Howdy {{session['first_name']}}</display></h1>
+    <div class="container">
+        <!-- **Move Container over to the right** -->
+        <div class="d-flex justify-content-end">
+          <div class="col-4 text-end">
+            <a href="/shows/new">
+                +Create
+            </a>
+            </div>
+            <div class="col-4 text-end">
+                <a href="/logout">
+                    logout
+                </a>
+          </div>
+        </div> 
+    <h5>All TV Shows:</h5> 
+    
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Network</th>
+            <th scope="col">Release Date</th>
+            <th scope="col">Actions</th>
+            <th style ="color: purple; "scope="col">Like!</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Stranger Things</th>
+            <td>Netflix</td>
+            <td>July 15, 2016</td>
+            <td><a href="/show/">
+              show
+          </a></td>
+            <td style = "color: purple">**hyperlink**</td>
+          </tr>
+          <tr>
+            <th scope="row">The Office</th>
+            <td>NBC</td>
+            <td>March 24, 2005</td>
+            <td><a href="/show/">
+              show
+          </a></td>
+            <td style = "color: purple">**hyperlink**</td>
+          </tr>
+          <tr>
+            <th scope="row">Saturday Night Live</th>
+            <td>NBC</td>
+            <td>October 11, 1975</td>
+            <td><a href="/show/">
+              show
+          </a></td>
+            <td style = "color: purple">**hyperlink**</td>
+          </tr>
+          <tr>
+            <th scope="row">Silicon Valley</th>
+            <td>HBO</td>
+            <td>April 6, 2014</td>
+            <td><a href="/show/">
+              show
+          </a>
+          <a href="/show/edit">
+            edit
+        </a>
+        <a href="/show/delete">
+          delete
+      </a></td>
+            <td style = "color: purple">**hyperlink**</td>
+          </tr><tr>
+            <th scope="row">Star Trek</th>
+            <td>NBC</td>
+            <td>September 8, 1966</td>
+            <td><a href="/show/">
+              show
+          </a></td>
+            <td style = "color: purple">**hyperlink**</td>
+          </tr>
+        </tbody>
+      </table>
+
+</body>
+</html>

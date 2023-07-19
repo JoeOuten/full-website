@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='flask_app\static\style.css') }}">
+    <title>BlackBelt Exam</title>
+</head>
+<body>
+    <body class="container-fluid">
+        <h1 style ="color: purple; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">TV Shows!</h1>
+        <div class="message">
+            {%with messages = get_flashed_messages(category_filter=['register'])%}    
+            {%if messages%}                            
+                {%for message in messages%}          
+                    <p>{{message|safe}}</p>                   
+                {%endfor%}
+            {%endif%}
+            {%endwith%}
+        </div>
+        <div class='row'>
+            <div class='left col'>
+            <h3>Register</h3>
+            <h9 class="text-danger">Password must not be blank</h9>
+                <form action="/register" method="POST">
+                    
+                    <div class="form-group">
+                        <label for="fname">First name:</label>
+                        <input type="text" name="fname" class="form-control">
+                    </div>               
+                    <div class="form-group">
+                        <label for="lname">Last name:</label>
+                        <input type="text"  name="lname" class="form-control">
+                    </div>
+                    <div class="form-group">
+                            <label for="eemail">Email:</label>
+                            <input type="text" id="eemail" name="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmpassword">Confirm password:</label>
+                        <input type="password" " name="confirmpassword" class="form-control" placeholder="Confirm password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class='right col'>
+                <h5>Login</h5>
+                <div class="message">
+                    {%with messages = get_flashed_messages(category_filter=['register'])%}    
+                    {%if messages%}                            
+                        {%for message in messages%}          
+                            <p>{{message|safe}}</p>                   
+                        {%endfor%}
+                    {%endif%}
+                    {%endwith%}
+                </div>
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <label for="conf-email">Email:</label>
+                        <input type="text"  name="conf-email" class="form-control" placeholder="Enter User Email" value="{{
+                            request.form.email }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="conf">Password:</label>
+                        <input type="text"  name="conf"  placeholder="Enter User Password" class="form-control" value="{{
+                            request.form.password }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    
+</body>
+</html>

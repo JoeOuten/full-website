@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='flask_app\static\style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="d-flex justify-content-end">
+        <div class="col-4 text-end">
+            <a href="/show">
+                TV Shows
+            </a>
+            </div>
+            <div class="col-4 text-end">
+                <a href="/logout">
+                    logout
+                </a>
+        </div>
+    </div>  
+    <div class="container" style="border:3px solid black;">
+            <h4>The Office</h4><div class="d-flex justify-content-end" style="color:purple">Liked by:user</div>
+             <form action="">
+                <div class="form-group">
+                    <label for="description">Network:</label>
+                    <input type="Description" name="description" class="form-control" placeholder="Enter Network:">
+                </div>
+                <div class="form-group">
+                    <label for="description">Release date:</label>
+                    <input type="Description" name="description" class="form-control" placeholder="Enter Release Date:">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <input type="Description" name="description" class="form-control" placeholder="Enter Description:">
+                </div>
+             </form>
+             <h3>Posted by: user</h3>   
+        </style>
+    </div>
+</body>
+</html>
